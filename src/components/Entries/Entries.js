@@ -1,24 +1,28 @@
 import Entry from "./Entry";
+import { useEffect, useState } from "react";
 import Card from "../UI/Card";
 import "./Entries.css";
 
 const Entries = (props) => {
-  const entry = props.entry;
+  const [users, setUsers] = useState([]);
+
+  const ftech_users = async () => {
+    const res = await fetch("http://localhost:8080/users").
+    then(res => {
+      return res.json();
+    }).
+    then(data => {
+      console.log(data);
+      setUsers(data);
+    })
+  };
+
   return (
     <div>
+      <button onClick={ftech_users}>Show users</button>
       <Card className="Entry">
-        <Entry
-          firstName={entry[0].firstName}
-          lastName={entry[0].lastName}
-          phoneNumber={entry[0].phoneNumber}
-          email={entry[0].email}
-        />
-        <Entry
-          firstName={entry[1].firstName}
-          lastName={entry[1].lastName}
-          phoneNumber={entry[1].phoneNumber}
-          email={entry[1].email}
-        />
+        {users.map((x) => <Entry entry={x}/>
+          )}
       </Card>
     </div>
   );
