@@ -1,0 +1,38 @@
+.new-entry {
+    background-color: #a892ee;
+    padding: 1rem;
+    margin: 2rem auto;
+    width: 50rem;
+    max-width: 95%;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  }
+  
+  .new-entry button {
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(24, 122, 208);
+    border: 1px solid white;
+    padding: 0.5rem;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  
+  .new-entry button:hover,
+  .new-entry button:active {
+    background-color: #510674;
+    border-color: #510674;
+  }
+  
+  .new-entry button.alternative {
+    color: #220131;
+    border-color: transparent;
+    background-color: transparent;
+  }
+  
+  .new-entry button.alternative:hover,
+  .new-entry button.alternative:active {
+    background-color: #ddb3f8;
+  }
